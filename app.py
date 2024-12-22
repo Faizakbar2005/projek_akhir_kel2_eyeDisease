@@ -13,7 +13,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load the Keras model
-model = load_model("model/matamv2.h5")
+model = load_model("model/mobilenet-ke2.h5")
 
 # Define the class labels
 class_labels = ['cataract', 'diabetic_retinopathy', 'glaucoma', 'normal']
