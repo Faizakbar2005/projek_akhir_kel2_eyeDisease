@@ -6,3 +6,6 @@ model/*.pth filter=lfs diff=lfs merge=lfs -text
 model/matamv2.h5
  filter=lfs diff=lfs merge=lfs -text
 model/mobilenet-ke2.h5 filter=lfs diff=lfs merge=lfs -text
+model/Prediksi_Penyakit_Mata_CNN.h5 filter=lfs diff=lfs merge=lfs -text
+model/mobilenetv2_eye_disease.pth filter=lfs diff=lfs merge=lfs -text
+model/my_model.keras filter=lfs diff=lfs merge=lfs -text
