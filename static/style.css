@@ -1,0 +1,535 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+}
+
+
+/* Sidebar Menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #282e36;
+    padding-top: 20px;
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .logo img {
+    width: 100px; /* Ukuran lebar logo */
+    height: auto; /* Menjaga aspek rasio gambar */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li.active {
+    background-color: #007BFF;
+}
+
+.sidebar ul li:hover {
+    background-color: #575757;
+}
+
+/* Bagian utama konten */
+.content {
+    margin-left: 200px; /* Memberi ruang untuk sidebar */
+    padding: 20px;
+}
+
+.section {
+    padding: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#dashboard {
+    background-color: #68a3e1;
+}
+
+#about {
+    background-color: #66b0d8;
+}
+
+#predict {
+    background-color: #a9cef7;
+    color: #333;
+    border-radius: 10px;
+    padding: 40px 20px;
+}
+
+/* Judul di bagian predict */
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif; /* Bold and unique font */
+    font-weight: 600; /* Make the header bold */
+    font-size: 36px; /* Set a larger font size for visibility */
+    text-align: center; /* Center the header */
+    color: #333; /* Set a dark color for better readability */
+    margin-top: 50px; /* Add some margin for spacing */
+    padding: 10px; /* Add padding for some space around the text */
+    text-transform: uppercase; /* Make the text all uppercase for emphasis */
+    letter-spacing: 2px; /* Increase letter spacing for a modern look */
+    line-height: 1.5; /* Add line-height for better readability */
+    border-bottom: 3px solid #f6f8fa; /* Add a bottom border with a color accent */
+}
+/* Styling untuk deskripsi bagian predict */
+#predict p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Form untuk prediksi penyakit mata */
+/* Form container */
+#predict form {
+    background-color: #f4f8fb; /* Light blue background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    margin: 40px auto;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+/* Input file */
+#predict form input[type="file"] {
+    margin-bottom: 25px;
+    padding: 15px;
+    width: 100%;
+    border: 2px solid #d6d8e1;
+    border-radius: 8px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* File input focus effect */
+#predict form input[type="file"]:focus {
+    border-color: #4caf50; /* Green border on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+/* Submit button */
+#predict form button {
+    background-color: #28a745; /* Green background */
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.3em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+/* Hover effect for the button */
+#predict form button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active state for the button */
+#predict form button:active {
+    background-color: #1e7e34;
+    transform: translateY(0);
+}
+
+
+/* Styling untuk hasil prediksi */
+.result {
+    margin-top: 40px;
+    text-align: center;
+    background-color: #f9f9f9;  /* Subtle background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.result:hover {
+    transform: translateY(-10px); /* Slight hover effect */
+}
+
+/* Styling for the image */
+.result img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.result img:hover {
+    transform: scale(1.05); /* Zoom effect on image hover */
+}
+
+/* Styling for the heading */
+.result h2 {
+    font-size: 2.5em;
+    color: #34495e;  /* Darker and modern color */
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling for the description text */
+.result p {
+    font-size: 1.3em;
+    color: #7f8c8d;  /* Softer text color */
+    margin-top: 15px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    #predict {
+        padding: 20px;
+    }
+
+    #predict h1 {
+        font-size: 2em;
+    }
+
+    #predict form {
+        padding: 20px;
+    }
+
+    #predict form button {
+        font-size: 1.1em;
+    }
+
+    .result h2 {
+        font-size: 1.8em;
+    }
+
+    .result p {
+        font-size: 1em;
+    }
+}
+
+/* Tampilan H1 dan P */
+h1 {
+    font-size: 3em;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+form input[type="file"] {
+    margin: 20px 0;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Styling untuk cards */
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Menambahkan transisi untuk efek zoom */
+}
+
+.card:hover {
+    transform: scale(1.1); /* Membesar saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan lebih besar */
+}
+
+.card h2 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Styling untuk hasil prediksi */
+.result {
+    margin-top: 20px;
+}
+
+.result img {
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+/* Styling untuk Team Members */
+.team-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.team-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.team-details h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team-details p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Responsiveness: adjust layout for small screens */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0; /* Remove sidebar margin on smaller screens */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 10px;
+    }
+
+    .sidebar ul li {
+        font-size: 1.0em;
+        padding: 12px;
+    }
+
+    .team-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .team-member {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .team-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .team-details h2 {
+        font-size: 1.2em;
+    }
+
+    .team-details p {
+        font-size: 0.9em;
+    }
+}
+
+/* Style for the Landing menu item with red background */
+.logout-menu a {
+    background-color: red;  /* Red background */
+    color: white;           /* White text */
+    padding: 10px 20px;     /* Optional padding for better appearance */
+    border-radius: 10px;     /* Optional rounded corners */
+    text-decoration: none;  /* Remove underline */
+}
+
+.logout-menu a:hover {
+    background-color: darkred;  /* Darker red on hover */
+}
+
+footer {
+    background-color: #c5c7c7;
+    text-align: center;
+    padding: 2px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    display: inline-block; /* Supaya transform hanya berlaku pada teks */
+    transform: translateX(70px); /* Geser teks ke kanan */
+}
+
+
+/* Information Section */
+#information {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-align: center;
+    background: url('/static/bg.jpg') no-repeat center center fixed; /* Gambar latar belakang */
+    background-size: cover;
+}
+
+#information .info-container {
+    background: rgba(0, 0, 0, 0.5); /* Transparansi hitam */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+#information h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: justify;
+    border-bottom: 3px solid #090a0a;
+}
+
+#information p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0 30px;
+}
+#information .info-logo {
+    position: relative;
+    top: 0;
+    margin-bottom: 20px; /* Memberikan jarak antara logo dan teks */
+}
+
+#information .info-logo img {
+    width: 150px; /* Ukuran logo */
+}
+

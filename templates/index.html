@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Menu Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" />
+        </div>
+        
+        <ul>
+            <li id="information-menu" class="menu-item"><a href="#information">Information</a></li>
+            <li id="dashboard-menu" class="menu-item"><a href="#dashboard">Dashboard</a></li>
+            <li id="about-menu" class="menu-item"><a href="#about">About</a></li>
+            <li id="predict-menu" class="menu-item"><a href="#predict">Predict</a></li>
+            <li id="landing-menu" class="menu-item logout-menu"><a href="{{ url_for('landing') }}">Back</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Information Section -->
+        <div class="information-section" id="information">
+            <div class="info-logo">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" />
+            </div>
+            <h1>Informasi Tentang Projek</h1>
+            <p>Projek Akhir ini adalah projek mendeteksi penyakit mata pada manusia menggunakan <b>MobileNetV2</b>. Projek ini dibuat untuk memenuhi persyaratan terakhir kelulusan studi independen course Artificial Intelligence di Mitra <b>PT. STECHOQ ROBOTIKA</b>. Projek ini masih terdapat banyak kesalahan, harapannya untuk kedepan projek ini bisa dikembangkan menjadi lebih baik lagi.</p>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="section" id="dashboard">
+            <h1>APA SAJA PENYAKIT PADA MATA?</h1>
+            <p>Berikut adalah informasi mengenai beberapa jenis penyakit yang dapat terjadi pada mata, termasuk Glaukoma, Katarak, Retinopati Diabetik, dan kondisi mata normal. Klik pada kartu di bawah ini untuk mengetahui lebih lanjut mengenai masing-masing penyakit.</p>
+            
+            <div class="cards">
+                <div class="card">
+                    <h2>Glaukoma</h2>
+                    <img src="/static/mata/g.jpg" alt="Glaukoma">
+                    <p>Glaukoma adalah kelompok penyakit mata yang dapat merusak saraf optik dan menyebabkan kebutaan.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Katarak</h2>
+                    <img src="/static/mata/c.jpg" alt="Katarak">
+                    <p>Katarak adalah kondisi di mana lensa mata menjadi keruh, menghalangi penglihatan.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Normal</h2>
+                    <img src="/static/mata/n.jpg" alt="Normal">
+                    <p>Mata normal adalah mata yang tidak mengalami gangguan atau penyakit.</p>
+                </div>
+
+                <div class="card">
+                    <h2>Retinopati Diabetik</h2>
+                    <img src="/static/mata/d.jpg" alt="Retinopati Diabetik">
+                    <p>Retinopati diabetik adalah komplikasi diabetes yang dapat merusak pembuluh darah di retina.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- About Section -->
+        <div class="section" id="about">
+            <h1>TIM YANG TERLIBAT</h1>
+            <p><strong>Kelompok 2:</strong></p>
+            <div class="team-box">
+                <div class="team-member">
+                    <div class="team-info">
+                        <img src="/static/member/rizal.jpg" alt="Ahmad Rizal Agustian" class="team-photo">
+                        <div class="team-details">
+                            <h2>Ahmad Rizal Agustian</h2>
+                            <p>Bertanggung jawab sebagai Peneliti dan Analis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-info">
+                        <img src="/static/member/delv.jpg" alt="Delvira Khulkhairat" class="team-photo">
+                        <div class="team-details">
+                            <h2>Delvira Khulkhairat</h2>
+                            <p>Bertanggung jawab sebagai Documentation Analyst.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-info">
+                        <img src="/static/member/faiz.jpg" alt="Faiz Akbar" class="team-photo">
+                        <div class="team-details">
+                            <h2>Faiz Akbar</h2>
+                            <p>Bertanggung jawab sebagai Manajer Proyek dan Komunikasi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-info">
+                        <img src="/static/member/filda.jpg" alt="Filda Zamardah" class="team-photo">
+                        <div class="team-details">
+                            <h2>Filda Zamardah</h2>
+                            <p>Bertanggung jawab sebagai AI Engineer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-info">
+                        <img src="/static/member/sele.jpg" alt="Selena Narda Dhiya Yusandito" class="team-photo">
+                        <div class="team-details">
+                            <h2>Selena Narda Dhiya Yusandito</h2>
+                            <p>Bertanggung jawab sebagai Peneliti dan Analis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Predict Section -->
+        <div class="section" id="predict">
+            <h1>PREDIKSI PENYAKIT MATA ANDA!</h1>
+            <p>Silahkan untuk mengupload gambar penyakit yang ingin anda deteksi dibawah ini.</p>
+            <form id="predictForm" action="/predict#predict" method="POST" enctype="multipart/form-data">
+                <label for="file">Silahkan unggah gambar dibawah ini:</label>
+                <input type="file" name="file" required>
+                <button type="submit">Deteksi</button>
+            </form>
+
+            <!-- Displaying Result -->
+            {% if prediction %}
+            <div class="result">
+                <h2>Prediction Result:</h2>
+                <p><strong>Disease:</strong> {{ prediction }}</p>
+                <p><strong>Confidence:</strong> {{ confidence|default(0)|round(2) }}%</p>
+
+                <!-- Displaying the uploaded image -->
+                <h4>Uploaded Image:</h4>
+                <img src="{{ url_for('static', filename='uploads/' + uploaded_image.split('/')[-1]) }}" alt="Uploaded Image" width="300">
+
+                <!-- Displaying the annotated image -->
+                {% if annotated_image %}
+                <h4>Annotated Image:</h4>
+                <img src="{{ url_for('static', filename='uploads/' + annotated_image.split('/')[-1]) }}" alt="Annotated Image" width="300">
+                {% endif %}
+            </div>
+            <button type="button" onclick="resetForm()">Reset</button>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Kelompok 2 - Eye Disease Prediction. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reset form function
+        function resetForm() {
+            document.getElementById('predictForm').reset();
+            const resultDiv = document.querySelector('.result');
+            if (resultDiv) {
+                resultDiv.style.display = 'none';
+            }
+        }
+
+        // Scroll Event Listener
+        document.addEventListener('scroll', function() {
+        // Ubah kelas yang dicari menjadi 'information-section' atau kelas lainnya
+        const sections = document.querySelectorAll('.information-section, .section');
+        let currentSection = '';
+
+        // Periksa setiap bagian apakah berada di tengah layar
+        sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                currentSection = section.id;
+            }
+        });
+
+        // Menghapus kelas active dari semua menu item
+        document.querySelectorAll('.menu-item').forEach((item) => {
+            item.classList.remove('active');
+        });
+
+        // Jika bagian aktif ditemukan, tambahkan kelas active ke menu yang sesuai
+        if (currentSection) {
+            const menuItem = document.getElementById(currentSection + '-menu');
+            if (menuItem) {
+                menuItem.classList.add('active');
+            }
+        }
+    });
+    </script>
+</body>
+</html>

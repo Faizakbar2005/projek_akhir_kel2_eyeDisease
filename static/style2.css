@@ -1,0 +1,108 @@
+/* Mengatur font dan tampilan dasar */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+/* Mengatur tampilan untuk halaman landing */
+.landing-page {
+    position: relative;
+    height: 100vh;
+    background-image: url('/static/eye.jpg'); /* Ganti dengan path gambar Anda */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* Tombol Lanjutkan */
+.btn-continue {
+    background-color: rgba(51, 139, 255, 0.7); /* Warna tombol transparan */
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 20px 20px;
+    text-decoration: none;
+    border-radius: 70%; /* Membuat tombol berbentuk lingkaran */
+    text-transform: uppercase;
+    position: absolute; /* Menggunakan posisi absolute */
+    top: 80%; /* Menurunkan posisi tombol ke bawah */
+    left: 50%;
+    transform: translateX(-50%); /* Membuat tombol berada di tengah horizontal */
+    overflow: hidden; /* Menghindari ripple keluar dari tombol */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Efek Hover */
+.btn-continue:hover {
+    background-color: rgba(255, 88, 51, 0.037); /* Warna tombol lebih solid saat hover */
+    border-color: #ff440000; /* Mengubah warna border saat hover */
+}
+
+/* Ripple Effect */
+.btn-continue::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3); /* Warna gelombang air */
+    border-radius: 50%; /* Membuat gelombang berbentuk lingkaran */
+    transform: translate(-50%, -50%);
+    animation: ripple-animation 1.5s infinite; /* Animasi gelombang berulang */
+}
+
+/* Animasi gelombang air */
+@keyframes ripple-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5); /* Gelombang berkembang */
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5); /* Gelombang semakin membesar */
+        opacity: 0;
+    }
+}
+
+/* Tambahkan efek fade-out */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+btn-continue::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple-animation 1.5s infinite;
+}
+
+@keyframes ripple-animation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}

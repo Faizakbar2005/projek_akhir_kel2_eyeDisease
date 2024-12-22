@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="landing-page">
+        <div class="overlay">
+            <div class="content">
+                <a href="#dashboard" class="btn-continue">Akses disini</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redirect to main content -->
+    <script>
+        document.querySelector('.btn-continue').addEventListener('click', function (event) {
+            event.preventDefault(); // Mencegah halaman berpindah secara langsung
+            const button = event.target;
+            
+            // Menambahkan kelas fade-out pada tombol
+            button.classList.add('fade-out');
+            
+            // Setelah animasi selesai, pindah ke halaman index
+            setTimeout(function() {
+                window.location.href = "index"; // Pindah ke index.html
+            }, 1000); // Waktu delay untuk menunggu transisi selesai (1000ms = 1 detik)
+        });
+    </script>
+    
+</body>
+</html>
